@@ -17,14 +17,14 @@ module.exports = {
       'Roles',
       [
         {
-          name: 'admin',
+          name: 'petugas',
           createdAt: new Date(),
-          updatedat: new Date(),
+          updatedAt: new Date(),
         },
         {
-          name: 'user',
+          name: 'anggota',
           createdAt: new Date(),
-          updatedat: new Date(),
+          updatedAt: new Date(),
         }
       ],
       {}
@@ -38,6 +38,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface('Roles', null, {});
+    await queryInterface.bulkDelete('Roles', null, {});
   }
 };
