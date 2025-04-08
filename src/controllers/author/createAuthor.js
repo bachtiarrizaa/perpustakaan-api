@@ -43,7 +43,7 @@ const createAuthor = async(req, res, next) => {
         name: result.name,
         address: result.address,
         telp: result.telp,
-        createdBy: result.user.name, // ganti nama propertinya di sini
+        createdBy: result.user.name,
         createdAt: result.createdAt,
         updatedAt: result.updatedAt,
       },

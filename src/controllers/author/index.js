@@ -1,3 +1,4 @@
 const createAuthor = require('./createAuthor');
+const getAllAuthors = require('./getAllAuthors');
 
-module.exports = { createAuthor };
+module.exports = { createAuthor, getAllAuthors };
