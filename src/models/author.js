@@ -15,12 +15,18 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'auhtor_id',
         as: 'books'
       });
+
+      Author.belongsTo(models.User, {
+        foreignKey: 'user_id',
+        as: 'user'
+      });
     }
   }
   Author.init({
     name: DataTypes.STRING,
     address: DataTypes.STRING,
-    telp: DataTypes.STRING
+    telp: DataTypes.STRING,
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Author',

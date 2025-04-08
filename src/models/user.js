@@ -15,6 +15,16 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'role_id',
         as: 'role',
       });
+
+      User.hasMany(models.Author, {
+        foreignKey: 'user_id',
+        as: 'createdAuthors'
+      });
+
+      User.hasMany(models.Publisher, {
+        foreignKey: 'user_id',
+        as: 'createdPublishers'
+      });
     }
   }
   User.init({

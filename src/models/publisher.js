@@ -15,11 +15,17 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'publisher_id',
         as: 'books'
       });
+
+      Publisher.belongsTo(models.User, {
+        foreignKey: 'user_id',
+        as: 'user'
+      });
     }
   }
   Publisher.init({
     name: DataTypes.STRING,
-    address: DataTypes.STRING
+    address: DataTypes.STRING,
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Publisher',
