@@ -4,5 +4,7 @@
  const { mustPetugas } = require('../middleware/authMiddleware');
 
  router.post('/create', mustPetugas, publisherController.createPublisher);
+ router.get('/get-all', mustPetugas, publisherController.getAllPublisher);
+ router.put('/:publisherId', mustPetugas, publisherController.updatedPublisher);
 
  module.exports = router;
