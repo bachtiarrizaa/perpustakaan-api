@@ -6,5 +6,6 @@
  router.post('/create', mustPetugas, publisherController.createPublisher);
  router.get('/get-all', mustPetugas, publisherController.getAllPublisher);
  router.put('/:publisherId', mustPetugas, publisherController.updatedPublisher);
+ router.delete('/:publisherId', mustPetugas, publisherController.deletePublisher);
 
  module.exports = router;

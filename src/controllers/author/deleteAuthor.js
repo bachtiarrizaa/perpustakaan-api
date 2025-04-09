@@ -23,6 +23,6 @@ const deleteAuthor = async (req, res, next) => {
     console.log(error)
     next(error)
   }
-}
+};
 
 module.exports = deleteAuthor;
