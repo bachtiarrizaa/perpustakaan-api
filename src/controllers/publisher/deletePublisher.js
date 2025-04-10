@@ -18,7 +18,7 @@ const deletePublisher = async (req, res, next) => {
     return res.status(200).json({
       status: 'success',
       message: 'Publisher berhasil dihapus'
-    })
+    });
   } catch (error) {
     console.log(error);
     next(error);
