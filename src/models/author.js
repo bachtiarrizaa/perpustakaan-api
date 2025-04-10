@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Author.hasMany(models.Book, {
-        foreignKey: 'auhtor_id',
+        foreignKey: 'author_id',
         as: 'books'
       });
 
