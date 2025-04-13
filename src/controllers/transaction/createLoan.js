@@ -60,7 +60,8 @@ const createLoan = async(req, res, next) => {
       user_id: req.user.id,
       book_id,
       borrow_date: borrowDate,
-      return_date: returnDate
+      return_date: returnDate,
+      status: 'dipinjam'
     });
 
     return res.status(201).json({
