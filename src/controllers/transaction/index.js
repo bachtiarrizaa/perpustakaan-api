@@ -1,3 +1,4 @@
 const createLoan = require('./createLoan');
+const getLoanHistoty = require('./getLoanHistory');
 
-module.exports + { createLoan };
+module.exports + { createLoan, getLoanHistoty };
