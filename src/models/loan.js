@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'book_id',
         as: 'book'
       });
+
+      Loan.hasOne(models.Return, {
+        foreignKey: 'loan_id',
+        as: 'return'
+      });
     }
   }
   Loan.init({

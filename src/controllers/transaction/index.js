@@ -1,5 +1,6 @@
 const createLoan = require('./createLoan');
+const createReturn = require('./createReturn');
 const getLoanHistoty = require('./getLoanHistory');
-const returnLoan = require('./returnLoan');
+// const returnLoan = require('./returnLoan');
 
-module.exports + { createLoan, getLoanHistoty, returnLoan };
+module.exports + { createLoan, getLoanHistoty, createReturn };
