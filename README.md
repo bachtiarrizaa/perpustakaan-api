@@ -1,4 +1,4 @@
-# 📚Book Management API
+# 📚Library Management API
 
 ## 📌Deskripsi
 Aplikasi ini adalah RESTful API untuk manajemen perpustakaan menggunakan Node.js, Express, dan Sequelize sebagai ORM untuk MySQL. API ini memungkinkan anggota perpustakaan untuk melakukan peminjaman dan pengembalian buku yang ada di perpustakaan yang sudah di masukkan oleh petugas perpustakaan.
