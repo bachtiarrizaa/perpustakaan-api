@@ -11,7 +11,6 @@ router.use('/auth', authRoutes);
 router.use('/author', authorRoutes);
 router.use('/publisher', publisherRoutes);
 router.use('/book', bookRoutes);
-router.use('/loan', transactionRoutes);
-// router.use('/return', transactionRoutes);
+router.use('/transaction', transactionRoutes);
 
 module.exports = router;
