@@ -4,7 +4,13 @@ const createReturn = async (req, res, next) => {
   try {
     
     const { loan_id, actual_return_date } = req.body;
-    console.log('Request body:', req.body);
+
+    if (!req.user || !req.user.id) {
+      return res.status(401).json({
+        status: 'fail',
+        message: 'Unauthorized! User not found'
+      });
+    }
 
     if (!loan_id || !actual_return_date) {
       return res.status(400).json({
@@ -21,6 +27,13 @@ const createReturn = async (req, res, next) => {
       });
     }
 
+    if (loan.user_id !== req.user.id) {
+      return res.status(403).json({
+        status: 'fail',
+        message: 'Kamu tidak memiliki izin untuk mengembalikan buku ini'
+      });
+    }
+
     const existReturn = await Return.findOne({
       where: { loan_id }
     });
@@ -29,6 +42,17 @@ const createReturn = async (req, res, next) => {
       return res.status(400).json({
         status: 'fail',
         message: 'Buku sudah dikembalikan sebelumnya'
+      });
+    }
+
+    const actualReturnDate = new Date(actual_return_date);
+    const borrowDate = new Date(loan.borrow_date);
+    const returnDate = new Date(loan.return_date);
+
+    if (actualReturnDate < borrowDate || actualReturnDate > returnDate) {
+      return res.status(400).json({
+        status: 'fail',
+        message: `Tanggal pengembalian harus antara ${borrowDate.toISOString().split('T')[0]} dan ${returnDate.toISOString().split('T')[0]}`
       });
     }
 
